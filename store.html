@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UYLAB - Store</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            padding: 15px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+   
+
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 0.01px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #0066ff;
+        }
+        
+       
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .store-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .product-count {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .search-sort {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .search-bar2 {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            width: 300px;
+        }
+        
+        .search-bar2 input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 5px;
+        }
+        
+        .search-bar2 i {
+            color: #999;
+            margin-right: 10px;
+        }
+        
+        .sort-by {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sort-by select {
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 4px;
+            background-color: white;
+            margin-left: 10px;
+        }
+        
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .product-platform {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: #0066ff;
+        }
+        
+        .add-to-cart {
+            background-color: #0066ff;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #0052cc;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+            }
+            
+            .search-sort {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .search-bar {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Navbar -->
+<nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #0a0a0a; color: white; position: sticky; top: 0; z-index: 999;">
+
+    <!-- Logo and Brand -->
+    <div style="display: flex; align-items: center;">
+        <img src="images/logo.png" alt="Cyber Cracker Logo" style="height: 52px; width: 52px; margin-right: 10px; border-radius: 8px;">
+        <span style="font-size: 24px; font-weight: bold; color: #00f9ff;">Cyber Cracker</span>
+    </div>
+
+  
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
+        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="index.html" style="color: white; text-decoration: none;">Services</a></li>
+        <li><a href="index.html" style="color: white; text-decoration: none;">Courses</a></li>
+        <li><a href="store.html" style="color: white; text-decoration: none;">Store</a></li>
+        <li><a href="#contact" style="color: white; text-decoration: none;">Contact Us</a></li>
+    </ul>
+
+</nav>
+
+    
+    <div class="container">
+        <div class="store-header">
+            <div class="filter-tabs">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Ethical Hacking</button>
+                <button class="filter-btn">Cyber Security</button>
+                <button class="filter-btn">Programming</button>
+            </div>
+            <div class="product-count">2 Products are available now</div>
+        </div>
+        
+        <div class="search-sort">
+            <div class="search-bar2">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search products...">
+            </div>
+            <div class="sort-by">
+                <span>Sort By</span>
+                <select>
+                    <option>Popular</option>
+                    <option>Newest</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/ethibook.png" alt="Liquid Transitions">
+                    <span class="product-badge">Premium</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ethical Hacking MasterBook</h3>
+                    <p class="product-platform">A Complete Bangla Ethical Hacking Guide</p>
+                    <div class="product-footer">
+                        <span class="product-price">$29.99</span>
+                        <button class="add-to-cart">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/road.png" alt="Film Burn Transitions">
+                    <span class="product-badge">Free</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Ethical Hacking Roadmap</h3>
+                    <p class="product-platform">Complete Roadmap and Syllabus</p>
+                    <div class="product-footer">
+                        <span class="product-price">$0.00</span>
+                        <button class="add-to-cart">Get Free</button>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.textContent.toLowerCase();
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        const platform = card.querySelector('.product-platform').textContent.toLowerCase();
+                        
+                        if (filter === 'all' || platform.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.querySelector('.search-bar input');
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                
+                productCards.forEach(card => {
+                    const title = card.querySelector('.product-title').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Sort functionality
+            const sortSelect = document.querySelector('.sort-by select');
+            sortSelect.addEventListener('change', function() {
+                const sortValue = this.value;
+                const productGrid = document.querySelector('.product-grid');
+                const products = Array.from(productCards);
+                
+                products.sort((a, b) => {
+                    if (sortValue === 'Price: Low to High') {
+                        const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('$', ''));
+                        const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('$', ''));
+                        return priceA - priceB;
+                    } else if (sortValue === 'Price: High to Low') {
+                        const priceA = parseFloat(a.querySelector('.product-price').textContent.replace('$', ''));
+                        const priceB = parseFloat(b.querySelector('.product-price').textContent.replace('$', ''));
+                        return priceB - priceA;
+                    } else if (sortValue === 'Newest') {
+                        // Assuming newer products are added later in the HTML
+                        return 0; // In a real app, you'd have a date property to sort by
+                    } else {
+                        // Default (Popular)
+                        return 0; // In a real app, you'd sort by popularity metrics
+                    }
+                });
+                
+                // Re-append sorted products
+                products.forEach(product => {
+                    productGrid.appendChild(product);
+                });
+            });
+            
+            // Add to cart functionality
+            const addToCartBtns = document.querySelectorAll('.add-to-cart');
+            addToCartBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card');
+                    const productName = productCard.querySelector('.product-title').textContent;
+                    const productPrice = productCard.querySelector('.product-price').textContent;
+                    
+                    alert(`Added to cart: ${productName} (${productPrice})`);
+                    // In a real app, you would add to a cart system here
+                });
+            });
+        });
+    </script>
+</body>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-content">
+        <h2 class="third-title">Contact Us</h2>
+        <p class="contact-description">Follow us on our social media platforms to get updates and stay connected.</p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61560776773210" target="_blank" class="social-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://youtube.com/@cybercracker123?si=l2vcrTGrDZESNWYc" target="_blank" class="social-link">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://t.me/cybercracker123" target="_blank" class="social-link">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2025 Cyber Cracker. All rights reserved.</p>
+    </div>
+</section>
+
+<style>
+    /* Contact Section */
+    .contact-section {
+        background: linear-gradient(135deg, #1c1c1c, #333);
+        padding: 50px 20px 0;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-content {
+        padding-bottom: 30px;
+    }
+
+    .third-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .contact-description {
+        color: #ccc;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1.2s ease-out;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-link i {
+        font-size: 30px;
+        color: #333;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-link:hover i {
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    .fab.fa-facebook:hover {
+        color: #4267B2;
+    }
+
+    .fab.fa-youtube:hover {
+        color: #FF0000;
+    }
+
+    .fab.fa-telegram:hover {
+        color: #0088cc;
+    }
+
+    /* Copyright */
+    .copyright {
+        padding: 20px 0;
+        background-color: linear-gradient(135deg, #1c1c1c, #333);
+        color: #aaa;
+        font-size: 0.9rem;
+        
+    }
+
+    .copyright p {
+        margin: 0;
+    }
+</style>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helpline Widget</title>
+  <style>
+    /* ========== General Reset ========== */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ========== Helpline Button ========== */
+    #helpline-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #helpline-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* ========== Chat Popup Box ========== */
+    #chat-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      display: none;
+      flex-direction: column;
+      padding: 15px;
+      z-index: 999;
+      animation: fadeSlideUp 0.4s ease-out;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question {
+      background: #f0f4ff;
+      color: #003f8a;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 500;
+    }
+
+    .question:hover {
+      background: #d6e4ff;
+    }
+
+    .answer {
+      background: #eaf5ff;
+      color: #333;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-left: 4px solid #0072ff;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ========== Responsive ========== */
+    @media screen and (max-width: 500px) {
+      #chat-popup {
+        width: 90%;
+        right: 5%;
+      }
+
+      #helpline-button {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Helpline Floating Button -->
+<button id="helpline-button">?</button>
+
+<!-- Chat Popup -->
+<div id="chat-popup">
+  <div class="question" onclick="toggleAnswer(0)">❓ How do I reset my password?</div>
+  <div class="answer">Click "Forgot Password" on the login page and follow the instructions.</div>
+
+  <div class="question" onclick="toggleAnswer(1)">📞 How to contact support?</div>
+  <div class="answer">You can reach us at <strong>support@example.com</strong> or call +123-456-7890.</div>
+
+  <div class="question" onclick="toggleAnswer(2)">🛒 Where is my order history?</div>
+  <div class="answer">Go to your Profile > Orders section to view your full order history.</div>
+
+  <div class="question" onclick="toggleAnswer(3)">🌐 How to change language settings?</div>
+  <div class="answer">Visit Settings > Language and select your preferred language.</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const helplineButton = document.getElementById("helpline-button");
+  const chatPopup = document.getElementById("chat-popup");
+
+  helplineButton.addEventListener("click", () => {
+    chatPopup.style.display = (chatPopup.style.display === "flex") ? "none" : "flex";
+  });
+
+  function toggleAnswer(index) {
+    const answers = document.querySelectorAll(".answer");
+    answers.forEach((answer, i) => {
+      if (i === index) {
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      } else {
+        answer.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+    <script src="script.js"></script> <!-- Link JavaScript -->
+</body>
+</html>
+

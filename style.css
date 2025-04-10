@@ -1,0 +1,435 @@
+/* Reset and Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff !important;
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #2a2a3a;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: cyan;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: cyan;
+}
+
+/* Hero Section */
+header {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #001f3f, #005f73);
+    color: white;
+    padding: 200px 50px 50px 50px;
+
+}
+
+header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Enroll Button */
+button {
+    background: cyan;
+    color: black;
+    font-size: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    background: lime;
+    transform: scale(1.1);
+}
+
+/* Sections */
+section {
+    padding: 80px 10%;
+    margin-top: 50px;
+}
+
+/* Course Cards */
+.course-card {
+    display: inline-block;
+    background: #2a2a3a;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    margin: 15px;
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+    background: #3a3a4a;
+}
+
+/* Contact Section */
+#contact {
+    background: #2a2a3a;
+    padding: 50px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+}
+
+.dark-mode nav {
+    background: #181818;
+}
+
+.dark-mode .course-card {
+    background: #181818;
+}
+
+.enroll-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #58a6ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .enroll-btn:hover {
+    background-color: #1f6feb;
+    transform: translateY(-2px);
+  }
+
+  .social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #121212;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Navbar Styles */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Logo Area */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-container img {
+    height: 52px;
+    width: 52px;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+  }
+  
+  .logo-container img:hover {
+    transform: rotate(360deg);
+  }
+  
+  .logo-container span {
+    color: #00f9ff;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+  }
+  
+  /* Navigation Links */
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+  
+  ul.nav-links li a {
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    padding: 10px 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Hover Effects */
+  ul.nav-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00f9ff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  ul.nav-links li a:hover {
+    color: #ff6347;
+    transform: translateY(-3px);
+  }
+  
+  ul.nav-links li a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  /* Responsive Layout */
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    ul.nav-links {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  
+  body {
+    line-height: 1.7;
+  }
+  
+  p {
+    line-height: 1.8;
+  }
+  
+
+  body {
+    line-height: 1.7;
+  }
+  
+  p {
+    line-height: 1.8;
+  }
+  
+  .hero-video {
+    width: 250%; /* or 480px */
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    
+  }
+
+  .video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+  }
+  
+  .search-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 6px 15px;
+    width: 240px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-wrapper input {
+    border: none;
+    outline: none;
+    padding: 6px;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    color: #333;
+}
+
+.search-wrapper i {
+    color: #888;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+.search-wrapper:hover,
+.search-wrapper:focus-within {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+ 
+.course-card:hover {
+  background-color: #1f2f3a;
+  color: #fff;
+  transform: translateY(-10px);
+}
+
+.course-card:hover .course-info h3,
+.course-card:hover .course-description {
+  color: #fff;
+}
+
+.free-badge {
+  background-color: #4caf50;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+  margin-left: 10px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+  transition: background-color 0.3s ease;
+}
+
+.free-badge:hover {
+  background-color: #45a049;
+}
+
+.services-section {
+  background-color: #121212;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.fourth-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.courses-section {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  overflow: hidden; /* Add this */
+}
+
+.section-container {
+  background: #fff;
+  padding: 40px 0;
+  position: relative;
+}
+
+.courses-section {
+  background: #fff !important;
+  padding: 20px 0 !important;
+}
+#home {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background-color: #0f0f0f; /* or match your site's dark background */
+}
+
+#services {
+  margin-top: 0;
+}
+

@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Cracker Course Page</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fb;
+      color: #333;
+    }
+
+    header {
+      background-color: #0d1a2b;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+    
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .video-wrapper iframe, .video-wrapper video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .course-info-box {
+      background-color: #004d99;
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 20px;
+    }
+
+    .course-info-box h2 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .price-tag {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .price-tag del {
+      color: #ccc;
+      margin-left: 10px;
+      font-size: 16px;
+    }
+
+    .tag-line {
+      font-size: 14px;
+      margin: 15px 0;
+    }
+
+    .go-to-cart, .save-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .go-to-cart {
+      background-color: #007bff;
+      color: white;
+      border: none;
+    }
+
+    .save-btn {
+      background-color: white;
+      color: #007bff;
+      border: 2px solid #007bff;
+    }
+
+    .course-includes {
+      margin-top: 25px;
+    }
+
+    .course-includes li {
+      margin-bottom: 10px;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .course-includes i {
+      color: #fff;
+    }
+
+    .course-tabs {
+      grid-column: span 2;
+      margin-top: 40px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 15px;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .tab.active {
+      border-bottom: 4px solid #007bff;
+      color: #007bff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    footer {
+      background: #0d1a2b;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .course-tabs {
+        grid-column: span 1;
+      }
+    }
+
+    .tab-content {
+  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab:hover {
+  color: #0059ff;
+  transition: color 0.3s ease;
+}
+
+.review {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 4px solid #007bff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: gold;
+  font-size: 18px;
+}
+
+.faq-item {
+  background-color: #eef4fb;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border-left: 4px solid #00c6ff;
+}
+
+.faq-item h4 {
+  margin-bottom: 6px;
+  color: #004d99;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+    
+      
+  <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #0a0a0a; color: white; position: sticky; top: 0; z-index: 999;">
+    
+    <!-- Logo and Brand -->
+    <div style="display: flex; align-items: center;">
+        <img src="images/logo.png" alt="Cyber Cracker Logo" style="height: 52px; width: 52px; margin-right: 10px; border-radius: 8px;">
+        <span style="font-size: 24px; font-weight: bold; color: #00f9ff;">Cyber Cracker</span>
+    </div>
+
+   
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
+        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+        <li><a href="index.html" style="color: white; text-decoration: none;">Services</a></li>
+        <li><a href="index.html" style="color: white; text-decoration: none;">Courses</a></li>
+        <li><a href="store.html" style="color: white; text-decoration: none;">Store</a></li>
+        <li><a href="#contact" style="color: white; text-decoration: none;">Contact Us</a></li>
+    </ul>
+
+    <link rel="stylesheet" href="styles.css" />
+
+    
+
+</nav>
+
+
+
+  <main>
+    <div class="video-wrapper">
+      <video src="preview.mp4" controls></video>
+      
+      <div class="course-title" style="text-align: center; margin-top: 40px; margin-bottom: 40px; padding: 0 20px; animation: fadeIn 1s ease-in-out;">
+        <h1 style="font-size: 36px; color: #0d1a2b; font-weight: 700;">Complete Ethical Hacking Bootcamp</h1>
+        <p style="font-size: 20px; color: #00c6ff; font-weight: 600; margin-top: 10px;">Become a Cybersecurity Pro with Real-World Skills</p>
+        <p style="font-size: 16px; color: #444; max-width: 800px; margin: 20px auto 10px;">
+          Whether you're an absolute beginner or already dabbling in tech, this course will walk you through the essential tools and real-world techniques of ethical hacking. Delivered in Bangla & English for easier understanding, it's perfect for students, tech lovers, or freelancers aiming for a career in cybersecurity.
+        </p>
+        <ul style="max-width: 800px; margin: 20px auto 0; text-align: left; font-size: 16px; color: #333; line-height: 1.6;">
+          <li>✅ Master tools like Nmap, Metasploit, Wireshark, Burp Suite & more</li>
+          <li>✅ Build your own hacking lab for practical learning</li>
+          <li>✅ Explore real-world attack scenarios and how to defend against them</li>
+          <li>✅ Get downloadable resources, quizzes, and a certificate</li>
+          <li>✅ Lifetime access on mobile, tablet, or PC</li>
+          <li>✅ Join an interactive Facebook community for support</li>
+        </ul>
+      </div>
+      
+      <style>
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      </style>
+      
+    </div>
+
+    
+
+    <div class="course-info-box">
+      <h2>BDT 2000 <del>3000</del></h2>
+      <p class="tag-line">💥 1000 OFF</p>
+      <ul style="margin: 20px 0;">
+        <li>⏰ <strong>Course Duration:</strong> 17 hrs 36 min</li>
+        <li>📊 <strong>Course Level:</strong> Beginner</li>
+        <li>👥 <strong>Students Enrolled:</strong> 2</li>
+        <li>🗣️ <strong>Language:</strong> English, Bangla</li>
+      </ul>
+
+      
+    
+      <button class="go-to-cart">Buy Now</button>
+      <button class="save-btn">Save</button>
+    
+      <div class="course-includes">
+        <h4 style="margin: 20px 0 10px;">This course includes:</h4>
+        <ul>
+          <li>📄 19 PDF Notes</li>
+          <li>📝 40 Quizzes</li>
+          <li>🎁 2 Free Lessons</li>
+          <li>📅 36 Months Access</li>
+          <li>📥 Free Exercise Files & Resources</li>
+          <li>🎓 Shareable Certificate of Completion</li>
+          <li>📱 Access on Mobile, Tablet and PC</li>
+          <li>💬 Facebook Community Group Support</li>
+          <li>🌐 100% Online Course</li>
+        </ul>
+      </div>
+
+
+    
+      
+      
+    </div>
+
+    
+   
+    
+    
+
+    <div class="course-tabs">
+      <div class="tabs">
+        <div class="tab active" data-tab="overview">Overview</div>
+        <div class="tab" data-tab="lessons">Lessons</div>
+        <div class="tab" data-tab="instructor">Instructor</div>
+        <div class="tab" data-tab="reviews">Reviews</div>
+        <div class="tab" data-tab="faq">F.A.Q</div>
+      </div>
+      <div class="tab-content active" id="overview">
+        
+          <h3>Course Overview</h3>
+          <p>Welcome to the Cyber Cracker Complete Ethical Hacking Bootcamp! This course is designed to turn beginners into skilled ethical hackers, covering real-world scenarios and practical hands-on learning.</p>
+          <ul>
+            <li>✔️ Learn from scratch with zero prior experience</li>
+            <li>✔️ Master tools like Nmap, Wireshark, Metasploit, Burp Suite & more</li>
+            <li>✔️ Build your own hacking lab</li>
+            <li>✔️ Real-world penetration testing projects</li>
+          </ul>
+          <p>Whether you're aiming for a cybersecurity job, freelancing, or just curious — this course is your gateway to mastering ethical hacking skills in Bangla & English.</p>
+        </div>
+        <!-- rest of your content -->
+      </div>
+      
+      <div class="tab-content" id="lessons">
+        <h3>Course Lessons</h3>
+        <ol>
+          <li>🔍 Introduction to Ethical Hacking</li>
+          <li>💻 Setting Up Kali Linux & Termux</li>
+          <li>🌐 Network Scanning with Nmap</li>
+          <li>🛠 Vulnerability Analysis with OpenVAS</li>
+          <li>🧪 Exploitation Basics (Metasploit)</li>
+          <li>🔐 Website Hacking & Bug Bounty Tips</li>
+          <li>📂 File & Malware Analysis</li>
+          <li>🧑‍💼 Freelancing & Career Path in Cybersecurity</li>
+        </ol>
+        <p><em>+ 25 more interactive modules & bonus case studies!</em></p>
+      </div>
+      
+      <div class="tab-content" id="instructor">
+        <h3>Meet Your Instructor</h3>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <img src="images/profile.jpg" alt="Instructor" style="width: 100px; border-radius: 50%;">
+          <div>
+            <h4>Rubaeat Farhan</h4>
+            <p>Cybersecurity Expert & Ethical Hacking Mentor</p>
+            <p>With 7+ years of hands-on experience in ethical hacking, bug bounty, and teaching, Farhan has helped thousands of students start their journey into cybersecurity. He makes complex topics simple and fun!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="reviews">
+        <h3>Student Reviews</h3>
+        <div class="review">
+          <div class="review-header">
+            <strong>Tanvir Ahmed</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>This course is truly amazing! It helped me understand networking and ethical hacking clearly, especially in Bangla. Thank you Cyber Cracker!</p>
+        </div>
+      
+        <div class="review">
+          <div class="review-header">
+            <strong>Nusrat Jahan</strong>
+            <div class="stars">⭐⭐⭐⭐</div>
+          </div>
+          <p>The instructor explains everything clearly and practically. A few modules could have more examples, but overall it's a great course!</p>
+        </div>
+      
+        <div class="review">
+          <div class="review-header">
+            <strong>Raihan Chowdhury</strong>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p>I never thought I’d understand hacking concepts this easily! The interactive lessons and downloadable resources are so helpful.</p>
+        </div>
+      </div>
+      </div>
+      
+      <div class="tab-content" id="faq">
+        <h3>Frequently Asked Questions</h3>
+        <div class="faq-item">
+          <h4>🔹 Do I need prior experience in hacking or programming?</h4>
+          <p>Nope! This course is beginner-friendly. You’ll learn everything step by step.</p>
+        </div>
+      
+        <div class="faq-item">
+          <h4>🔹 Will I get a certificate after completing the course?</h4>
+          <p>Yes, a shareable digital certificate will be awarded upon completion.</p>
+        </div>
+      
+        <div class="faq-item">
+          <h4>🔹 Can I access the course on mobile?</h4>
+          <p>Absolutely! This course is optimized for desktop, tablet, and mobile viewing.</p>
+        </div>
+      
+        <div class="faq-item">
+          <h4>🔹 Is there any community support?</h4>
+          <p>Yes! Join our active Facebook group and Telegram channel for peer and mentor support.</p>
+        </div>
+      </div>
+
+      
+      
+
+   
+    
+    
+    
+
+    <script>
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+    
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          contents.forEach(c => {
+            c.classList.remove('active');
+            c.style.display = 'none';
+          });
+    
+          tab.classList.add('active');
+          const activeContent = document.getElementById(tab.dataset.tab);
+          activeContent.style.display = 'block';
+    
+          // Delay for animation effect
+          setTimeout(() => {
+            activeContent.classList.add('active');
+          }, 10);
+        });
+      });
+    </script>
+
+<div class="max-w-4xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg">
+  <h2 class="text-2xl font-bold text-gray-800 mb-4">📚 Course Content</h2>
+  <p class="text-gray-600 mb-6">20 lessons · 19 notes · 5 downloadable files</p>
+
+  <!-- Table Container -->
+  <div class="course-table-container">
+    <table class="course-table">
+      <thead>
+        <tr class="table-header">
+          <th class="py-3 px-4">Module</th>
+          <th class="py-3 px-4">Duration</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🔐 Module 1: Introduction to Ethical Hacking</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>What is Ethical Hacking?</li>
+                <li>Types of Hackers</li>
+                <li>Ethics and Laws</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 20m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">💻 Module 2: Setting Up the Lab</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Installing Kali Linux</li>
+                <li>Using Termux on Android</li>
+                <li>Virtual Machine Basics</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">2h 05m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+        <tr class="table-row">
+          <td class="py-3 px-4">
+            <details class="module-details">
+              <summary class="module-summary">🌐 Module 3: Network Scanning</summary>
+              <ul class="ml-5 mt-2 list-disc text-sm text-gray-600">
+                <li>Nmap Basics</li>
+                <li>Scanning Types</li>
+                <li>Understanding Ports</li>
+              </ul>
+            </details>
+          </td>
+          <td class="py-3 px-4">1h 45m</td>
+        </tr>
+
+      
+
+        <!-- Add more modules here as needed -->
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Custom CSS -->
+<style>
+  /* Container */
+  .course-table-container {
+    border: 2px solid #3b82f6;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background-color: #eff6ff;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Table Styling */
+  .course-table {
+    width: 100%;
+    border-collapse: collapse;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  /* Table Header */
+  .table-header {
+    background-color: #bfdbfe;
+    color: #1e40af;
+    text-align: left;
+  }
+
+  .table-header th {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  /* Table Row */
+  .table-row {
+    border-bottom: 1px solid #93c5fd;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .table-row:hover {
+    background-color: #dbeafe;
+    transform: translateX(5px); /* Subtle shift on hover */
+  }
+
+  /* Module Details Animation */
+  details {
+    cursor: pointer;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+  }
+
+  .module-summary {
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+
+  .module-summary:hover {
+    color: #3b82f6;
+  }
+
+  /* Fade in animation for table rows */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Style for collapsed details (initially hidden content) */
+  details[open] {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  details[open] ul {
+    padding-left: 1rem;
+    opacity: 1;
+  }
+
+  /* Animation when opening details */
+  @keyframes slideIn {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 1000px;
+      opacity: 1;
+    }
+  }
+
+  /* Row text styling */
+  .table-row td {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: #1f2937;
+  }
+
+  /* Table Body */
+  .table-body {
+    color: #1f2937;
+  }
+
+  /* Module Details */
+  details[open] summary {
+    font-weight: bold;
+  }
+</style>
+
+<!-- Custom JavaScript -->
+<script>
+  // Add a smooth animation to the details element when expanding or collapsing
+  const detailsElements = document.querySelectorAll('details');
+
+  detailsElements.forEach(detail => {
+    detail.addEventListener('toggle', () => {
+      if (detail.open) {
+        detail.style.transition = 'max-height 0.3s ease-out';
+      }
+    });
+  });
+</script>
+
+
+    
+   
+    
+  </main>
+
+  <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="contact-content">
+      <h2 class="third-title">Contact Us</h2>
+      <p class="contact-description">Follow us on our social media platforms to get updates and stay connected.</p>
+      
+      <div class="social-links">
+          <a href="https://www.facebook.com/profile.php?id=61560776773210" target="_blank" class="social-link">
+              <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://youtube.com/@cybercracker123?si=l2vcrTGrDZESNWYc" target="_blank" class="social-link">
+              <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://t.me/cybercracker123" target="_blank" class="social-link">
+              <i class="fab fa-telegram"></i>
+          </a>
+      </div>
+  </div>
+
+  <div class="copyright">
+      <p>&copy; 2025 Cyber Cracker. All rights reserved.</p>
+  </div>
+</section>
+
+<style>
+  /* Contact Section */
+  .contact-section {
+      background: linear-gradient(135deg, #1c1c1c, #333);
+      padding: 50px 20px 0;
+      text-align: center;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-content {
+      padding-bottom: 30px;
+  }
+
+  .third-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out;
+  }
+
+  .contact-description {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 1.2s ease-out;
+  }
+
+  .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      animation: fadeInUp 1.5s ease-out;
+  }
+
+  .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .social-link i {
+      font-size: 30px;
+      color: #333;
+      transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .social-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-link:hover i {
+      color: #fff;
+      transform: scale(1.1);
+  }
+
+  .fab.fa-facebook:hover {
+      color: #4267B2;
+  }
+
+  .fab.fa-youtube:hover {
+      color: #FF0000;
+  }
+
+  .fab.fa-telegram:hover {
+      color: #0088cc;
+  }
+
+  /* Copyright */
+  .copyright {
+      padding: 20px 0;
+      background-color: linear-gradient(135deg, #1c1c1c, #333);
+      color: #aaa;
+      font-size: 0.9rem;
+      
+  }
+
+  .copyright p {
+      margin: 0;
+  }
+</style>
+
+  
+
+
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helpline Widget</title>
+  <style>
+    /* ========== General Reset ========== */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ========== Helpline Button ========== */
+    #helpline-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #helpline-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* ========== Chat Popup Box ========== */
+    #chat-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      display: none;
+      flex-direction: column;
+      padding: 15px;
+      z-index: 999;
+      animation: fadeSlideUp 0.4s ease-out;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question {
+      background: #f0f4ff;
+      color: #003f8a;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 500;
+    }
+
+    .question:hover {
+      background: #d6e4ff;
+    }
+
+    .answer {
+      background: #eaf5ff;
+      color: #333;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-left: 4px solid #0072ff;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ========== Responsive ========== */
+    @media screen and (max-width: 500px) {
+      #chat-popup {
+        width: 90%;
+        right: 5%;
+      }
+
+      #helpline-button {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Helpline Floating Button -->
+<button id="helpline-button">?</button>
+
+<!-- Chat Popup -->
+<div id="chat-popup">
+  <div class="question" onclick="toggleAnswer(0)">❓ How do I reset my password?</div>
+  <div class="answer">Click "Forgot Password" on the login page and follow the instructions.</div>
+
+  <div class="question" onclick="toggleAnswer(1)">📞 How to contact support?</div>
+  <div class="answer">You can reach us at <strong>support@example.com</strong> or call +123-456-7890.</div>
+
+  <div class="question" onclick="toggleAnswer(2)">🛒 Where is my order history?</div>
+  <div class="answer">Go to your Profile > Orders section to view your full order history.</div>
+
+  <div class="question" onclick="toggleAnswer(3)">🌐 How to change language settings?</div>
+  <div class="answer">Visit Settings > Language and select your preferred language.</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const helplineButton = document.getElementById("helpline-button");
+  const chatPopup = document.getElementById("chat-popup");
+
+  helplineButton.addEventListener("click", () => {
+    chatPopup.style.display = (chatPopup.style.display === "flex") ? "none" : "flex";
+  });
+
+  function toggleAnswer(index) {
+    const answers = document.querySelectorAll(".answer");
+    answers.forEach((answer, i) => {
+      if (i === index) {
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      } else {
+        answer.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+    <script src="script.js"></script> <!-- Link JavaScript -->
+</body>
+</html>
+
+
+

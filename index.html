@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Cracker - Home</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+    
+</head>
+<body>
+
+    <!-- Navbar -->
+    
+      
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background-color: #0a0a0a; color: white; position: sticky; top: 0; z-index: 999;">
+    
+        <!-- Logo and Brand -->
+        <div style="display: flex; align-items: center;">
+            <img src="images/logo.png" alt="Cyber Cracker Logo" style="height: 52px; width: 52px; margin-right: 10px; border-radius: 8px;">
+            <span style="font-size: 24px; font-weight: bold; color: #00f9ff;">Cyber Cracker</span>
+        </div>
+    
+        <!-- Centered Search Bar -->
+        <div class="search-bar" style="flex: 1; display: flex; justify-content: center;">
+            <div class="search-wrapper">
+                <input type="text" id="searchBar" placeholder="Search courses..." onkeyup="filterCourses()">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+    
+        <!-- Navigation Links -->
+        <ul class="nav-links" style="list-style: none; display: flex; gap: 25px; margin: 0; padding: 0;">
+            <li><a href="#home" style="color: white; text-decoration: none;">Home</a></li>
+            <li><a href="#services" style="color: white; text-decoration: none;">Services</a></li>
+            <li><a href="#courses" style="color: white; text-decoration: none;">Courses</a></li>
+            <li><a href="store.html" style="color: white; text-decoration: none;">Store</a></li>
+            <li><a href="#contact" style="color: white; text-decoration: none;">Contact Us</a></li>
+        </ul>
+    
+    </nav>
+    
+    
+
+    <!-- Hero Section -->
+    <header id="home">
+        <h1>Master the Digital Frontier</h1>
+        <p>Learn Ethical Hacking, Programming & More!</p>
+        <div class="video-section">
+            <video class="hero-video" controls>
+              <source src="myvideo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          
+    
+          
+          
+        
+    </header>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <h2 class="fourth-title">Our Services</h2>
+    <div class="services-container">
+
+        <!-- Cybersecurity Services -->
+        <div class="service-card">
+            <i class="fas fa-shield-alt service-icon"></i>
+            <h3>Vulnerability Assessment</h3>
+            <p>Identify and prioritize security weaknesses in your systems before they can be exploited.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-bug service-icon"></i>
+            <h3>Penetration Testing</h3>
+            <p>Conduct simulated cyber attacks to detect real vulnerabilities in your applications and networks.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-bullseye service-icon"></i>
+            <h3>Bug Bounty Consultancy</h3>
+            <p>Expert support in managing or contributing to bug bounty platforms and programs.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-chalkboard-teacher service-icon"></i>
+            <h3>Security Awareness Training</h3>
+            <p>Equip your team with knowledge to prevent phishing, malware, and social engineering attacks.</p>
+        </div>
+
+        <!-- Programming Services -->
+        <div class="service-card">
+            <i class="fas fa-laptop-code service-icon"></i>
+            <h3>Custom Software Development</h3>
+            <p>Design and develop tailored software solutions to fit your business needs.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Web App Development</h3>
+            <p>Build responsive, fast, and secure web applications using modern tech stacks.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-plug service-icon"></i>
+            <h3>API Development</h3>
+            <p>Create powerful and secure APIs to connect services and automate workflows.</p>
+        </div>
+
+        <!-- AI & Data Services -->
+        <div class="service-card">
+            <i class="fas fa-robot service-icon"></i>
+            <h3>AI Model Training</h3>
+            <p>Develop and fine-tune machine learning models for prediction, classification, and automation.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-comments service-icon"></i>
+            <h3>Chatbot & NLP Integration</h3>
+            <p>Implement intelligent conversational bots powered by AI for customer support or data collection.</p>
+        </div>
+
+        <div class="service-card">
+            <i class="fas fa-chart-line service-icon"></i>
+            <h3>Data Analysis & Visualization</h3>
+            <p>Extract insights from raw data and present them using clean, meaningful dashboards.</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Courses Section -->
+<section id="courses" class="courses-section">
+    <h2 class="section-title">Our Courses</h2>
+    
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/image1.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>Penetration Testing</h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price">$199 <span class="highlight-price">Now Only $149</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+                <a href="course.html" class="btn details-btn"><i class="fas fa-exclamation-circle"></i> Details</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/ethipro.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>Penetration Testing</h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price">$199 <span class="highlight-price">Now Only $149</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+                <a href="course-detail.html" class="btn details-btn"><i class="fas fa-exclamation-circle"></i> Details</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+    
+  
+
+
+    
+</section>
+
+<style>
+    /* Courses Section */
+    .courses-section {
+        padding: 50px 20px;
+        background: #f8f9fa;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #000000 !important;
+        margin-bottom: 40px;
+        animation: fadeInUp 1s ease-out;
+    }
+    
+    .course-card:hover .course-stats {
+    opacity: 1;
+}
+
+
+    .course-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    width: 350px;
+    margin: 15px;
+    display: inline-block;
+    vertical-align: top;
+    animation: fadeInUp 1.5s ease-out;
+    padding: 0; /* Ensure no internal padding */
+
+    .course-card:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.course-card:hover .course-info h3,
+.course-card:hover .course-description,
+.course-card:hover .course-details,
+.course-card:hover .course-details p,
+.course-card:hover .instructor,
+.course-card:hover .price,
+.course-card:hover .highlight-price {
+    color: #fff !important;
+}
+
+
+    .course-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+    border-radius: 0;
+}
+
+    .course-info {
+        padding: 15px;
+        color: #333;
+    }
+
+    .course-info h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .course-description {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .course-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .instructor,
+    .price {
+        font-size: 1rem;
+        color: #e50e0e;
+    }
+
+    .highlight-price {
+        color: #e74c3c;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .course-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 25px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        border-radius: 30px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .enroll-btn {
+        background-color: #3498db;
+        color: #fff;
+    }
+
+    .details-btn {
+        background-color: #2ecc71;
+        color: #fff;
+        position: relative;
+    }
+
+    .enroll-btn i,
+    .details-btn i {
+        margin-right: 8px;
+    }
+
+    .details-btn i {
+        font-size: 1.3rem;
+    }
+
+    .enroll-btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-5px);
+    }
+
+    .details-btn:hover {
+        background-color: #27ae60;
+        transform: translateY(-5px);
+    }
+
+    .course-stats {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 0.9rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .rating {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .rating i {
+        color: #f39c12;
+        margin-right: 3px;
+    }
+
+    .rating-number {
+        color: #fff;
+        margin-left: 5px;
+    }
+
+    .students-enrolled {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .students-enrolled i {
+        margin-right: 5px;
+        color: #fff;
+    }
+
+    .course-card:hover .course-stats {
+        opacity: 1;
+    }
+
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+
+
+
+
+<!-- free-Courses Section -->
+<section id="free-courses" class="courses-section">
+    <h2 class="section-title">Free Courses</h2>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/ethi.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Ethical Hacking Course in 15 Hours
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/python.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Best Python programming Course 
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/net.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Computer Networking Course
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/digi.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Digital Marketing Course
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/fiverr.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Fiverr Freelancing Course
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="course-card">
+        <a href="course-detail.html">
+            <img src="images/ai.jpg" alt="Ethical Hacking" class="course-img">
+        </a>
+        <div class="course-info">
+            <h3>
+                Artificial Intelligence Course
+                <span class="free-badge" title="This course is 100% free!">
+                    <i class="fas fa-gift"></i> Free
+                </span>
+            </h3>
+            <p class="course-description">Learn penetration testing, cybersecurity, and bug bounty hunting.</p>
+            <div class="course-details">
+                <p class="instructor">Instructor: Rubaeat Farhan</p>
+                <p class="price"><span class="highlight-price">৳ 0.00</span></p>
+            </div>
+            <div class="course-buttons">
+                <a href="#" class="btn enroll-btn"><i class="fas fa-cart-plus"></i> Enroll Now</a>
+            </div>
+        </div>
+        <!-- Rating and Enrolled Students -->
+        <div class="course-stats" onmouseover="fadeStats(this)" onmouseleave="resetStats(this)">
+            <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <span class="rating-number">(4.5)</span>
+            </div>
+            <div class="students-enrolled">
+                <i class="fas fa-users"></i><span>150</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-container">
+        <!-- Courses Section -->
+        <section id="courses" class="courses-section">...</section>
+        
+        <!-- Free Courses Section -->
+        <section id="free-courses" class="courses-section">...</section>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-content">
+        <h2 class="third-title">Contact Us</h2>
+        <p class="contact-description">Follow us on our social media platforms to get updates and stay connected.</p>
+        
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61560776773210" target="_blank" class="social-link">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://youtube.com/@cybercracker123?si=l2vcrTGrDZESNWYc" target="_blank" class="social-link">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://t.me/cybercracker123" target="_blank" class="social-link">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2025 Cyber Cracker. All rights reserved.</p>
+    </div>
+</section>
+
+<style>
+    /* Contact Section */
+    .contact-section {
+        background: linear-gradient(135deg, #1c1c1c, #333);
+        padding: 50px 20px 0;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-content {
+        padding-bottom: 30px;
+    }
+
+    .third-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+        animation: fadeInUp 1s ease-out;
+    }
+
+    .contact-description {
+        color: #ccc;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        animation: fadeInUp 1.2s ease-out;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        animation: fadeInUp 1.5s ease-out;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .social-link i {
+        font-size: 30px;
+        color: #333;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-link:hover i {
+        color: #fff;
+        transform: scale(1.1);
+    }
+
+    .fab.fa-facebook:hover {
+        color: #4267B2;
+    }
+
+    .fab.fa-youtube:hover {
+        color: #FF0000;
+    }
+
+    .fab.fa-telegram:hover {
+        color: #0088cc;
+    }
+
+    /* Copyright */
+    .copyright {
+        padding: 20px 0;
+        background-color: linear-gradient(135deg, #1c1c1c, #333);
+        color: #aaa;
+        font-size: 0.9rem;
+        
+    }
+
+    .copyright p {
+        margin: 0;
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Helpline Widget</title>
+  <style>
+    /* ========== General Reset ========== */
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ========== Helpline Button ========== */
+    #helpline-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 26px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #helpline-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* ========== Chat Popup Box ========== */
+    #chat-popup {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 320px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      display: none;
+      flex-direction: column;
+      padding: 15px;
+      z-index: 999;
+      animation: fadeSlideUp 0.4s ease-out;
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question {
+      background: #f0f4ff;
+      color: #003f8a;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-weight: 500;
+    }
+
+    .question:hover {
+      background: #d6e4ff;
+    }
+
+    .answer {
+      background: #eaf5ff;
+      color: #333;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-left: 4px solid #0072ff;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateX(-10px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ========== Responsive ========== */
+    @media screen and (max-width: 500px) {
+      #chat-popup {
+        width: 90%;
+        right: 5%;
+      }
+
+      #helpline-button {
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Helpline Floating Button -->
+<button id="helpline-button">?</button>
+
+<!-- Chat Popup -->
+<div id="chat-popup">
+  <div class="question" onclick="toggleAnswer(0)">❓ How do I reset my password?</div>
+  <div class="answer">Click "Forgot Password" on the login page and follow the instructions.</div>
+
+  <div class="question" onclick="toggleAnswer(1)">📞 How to contact support?</div>
+  <div class="answer">You can reach us at <strong>support@example.com</strong> or call +123-456-7890.</div>
+
+  <div class="question" onclick="toggleAnswer(2)">🛒 Where is my order history?</div>
+  <div class="answer">Go to your Profile > Orders section to view your full order history.</div>
+
+  <div class="question" onclick="toggleAnswer(3)">🌐 How to change language settings?</div>
+  <div class="answer">Visit Settings > Language and select your preferred language.</div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  const helplineButton = document.getElementById("helpline-button");
+  const chatPopup = document.getElementById("chat-popup");
+
+  helplineButton.addEventListener("click", () => {
+    chatPopup.style.display = (chatPopup.style.display === "flex") ? "none" : "flex";
+  });
+
+  function toggleAnswer(index) {
+    const answers = document.querySelectorAll(".answer");
+    answers.forEach((answer, i) => {
+      if (i === index) {
+        answer.style.display = answer.style.display === "block" ? "none" : "block";
+      } else {
+        answer.style.display = "none";
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+    <script src="script.js"></script> <!-- Link JavaScript -->
+</body>
+</html>
+
